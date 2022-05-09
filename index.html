@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Mister Canvas</title>
+  </head>
+  <body onload="onInit()">
+    <nav class="nav-bar">
+      <h1>Mister Canvas</h1>
+      <div class="menu">
+        <input
+        type="color"
+        class="input-color"
+        id="shape-color"
+        name="txt-color"
+        onchange="onChangeColorShape(event)"
+      />
+      <input
+        type="color"
+        class="input-color"
+        id="bg-color"
+        name="bg-color"
+        value="#ffffff"
+        onchange="onChangeBGC(event)"
+      />
+      <select id="shape" onchange="setShape(this)">
+        <option value="circle">Circles</option>
+        <option value="squere">Squeres</option>
+        <option value="triangle">Triangle</option>
+      </select>
+      <input
+        type="range"
+        name="brushSize"
+        id="brushSize"
+        onchange="setBrushSize(this)"
+        min="1"
+        max="10"
+        value="2"
+      />
+      <button class="btn" onclick="erase()">Clear</button>
+      <a href="#" class="btn" onclick="save(this)" download="my-img.jpg">
+        Save
+      </a>
+    </nav>
+      </div>
+      
+    <div class="canvas-container">
+      <canvas id="my-canvas"></canvas>
+    </div>
+    <script src="./js/controler.js"></script>
+  </body>
+</html>
